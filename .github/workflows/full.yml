@@ -45,10 +45,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Space cleanup #清理空间，安装依赖
-        env:  ＃环境变量
+    #清理空间，安装依赖
+    - name: Space cleanup
+        env:
           DEBIAN_FRONTEND: noninteractive
-        run: |  #运行命令
+        run: |
           docker rmi `docker images -q`
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* android*
