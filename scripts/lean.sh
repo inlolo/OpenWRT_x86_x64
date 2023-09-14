@@ -38,12 +38,17 @@ rm -rf openwrt-package/luci-app-verysync
 git clone --depth=1 https://github.com/fw876/helloworld
 
 # Add luci-app-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
 #添加pssswall依赖包
-#git clone -b packages https://github.com/xiaorouji/openwrt-passwall-packages.git
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages.git
-svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git
+
+#svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+#svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2
+
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+#svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/luci-app-passwall
+#svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 package/luci-app-passwall2
 
 #Passwall官方命令
 #echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
